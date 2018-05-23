@@ -4,6 +4,7 @@ require 'nokogiri'
 
 class Scraper
 
+<<<<<<< HEAD
   def self.scrape_index_page(index_url)
     html = File.read(index_url)
     doc = Nokogiri::HTML(html)
@@ -16,6 +17,10 @@ class Scraper
         :profile_url => x.css('a').attribute('href').value
       }
     end
+=======
+  def self.scrape_index_page(./fixtures/student-site/index.html)
+    
+>>>>>>> 56fe407ab718f7cc3e6d699351771a4e197d769f
   end
 
   def self.scrape_profile_page(profile_url)
@@ -29,6 +34,7 @@ class Scraper
       social << link
     }
 
+<<<<<<< HEAD
     social.each do |x|
       if x.attribute('href').value.include? "twitter"
         scraped[:twitter] = x.attribute('href').value
@@ -45,3 +51,6 @@ class Scraper
   scraped
 end
 end
+=======
+
+>>>>>>> 56fe407ab718f7cc3e6d699351771a4e197d769f
